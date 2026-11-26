@@ -41,8 +41,8 @@ Shukla and Singh. At odd scale $r=2m-3$ with $m\ge3$ we construct, for each $h$ 
 a free direct summand of rank at least $2^h-1$ in $\Hred_{q}(\N(\Q_n,r);\Z)$, $q=2^m-2^{m-h}-2$, for every $n\ge m$. The
 summand for $h=3$ lies in a degree outside the set proposed by Adams, Shukla and Singh for every odd $r\ge11$, and it
 forces the collapsibility number above the proposed odd-scale value $3\cdot2^k-1$. Together with an upper bound of
-$2^{k+2}-1$, the collapsibility number at scale $2k+1$ divided by $2^{k+2}$ tends to $1$, uniformly in $n\ge k+2$. For $k=1$ the construction shows that the complex $\Theta(\mathrm{Cube}(m,1))$ of Conant
-and Thistlethwaite is not homotopy equivalent to a wedge of spheres of one dimension for $m\ge7$, as they conjectured.
+$2^{k+2}-1$, the collapsibility number at scale $2k+1$ divided by $2^{k+2}$ tends to $1$, uniformly in $n\ge k+2$. For $k=1$ and $m\ge7$ the construction proves the first part of a conjecture of Conant and
+Thistlethwaite: the complex $\Theta(\mathrm{Cube}(m,1))$ is not homotopy equivalent to a wedge of spheres of a single dimension.
 \end{abstract}
 
 \maketitle
@@ -93,13 +93,13 @@ $3\cdot2^k-2$; and $\C(\N(\Q_n,2k+1))\ge7\cdot2^{k-1}-1>3\cdot2^k-1$. So at ever
 
 The complex $\N(\Q_m,2m-3)$ is the complex $\Theta(\mathrm{Cube}(m,1))$ of Conant and Thistlethwaite \cite{CT}, as
 Adams, Shukla and Singh observe \cite{ASS}. Conant and Thistlethwaite computed its rational homology for $m\le5$; at
-$m=5$ they found homology in degrees $22$ and $24$ \cite[Theorem~5]{CT}. With Lemma~\ref{lem:retract} below, the class
-in degree $24$ gives $\Hred_{24}(\N(\Q_n,7))\ne0$ and $\C(\N(\Q_n,7))\ge25>3\cdot2^3-1$ for every $n\ge5$, so at $r=7$ the
+$m=5$ they found homology in degrees $22$ and $24$ \cite[Theorem~5]{CT}. With Lemma~\ref{lem:retract} below, which holds
+with any coefficients, the class in degree $24$ gives $\Hred_{24}(\N(\Q_n,7);\mathbb{Q})\ne0$ and $\C(\N(\Q_n,7))\ge25>3\cdot2^3-1$ for every $n\ge5$, so at $r=7$ the
 odd cases of both questions are already answered by their computation. Corollary~\ref{cor:questions} answers them at
 every odd $r\ge11$. The cases $r=5$ and $r=9$ are not settled by these arguments.
 
 Conant and Thistlethwaite conjecture that $\Theta(\mathrm{Cube}(n,k))$ is not homotopy equivalent to a wedge of spheres
-of one dimension for $0<k<n-2$ and $n$ large, and that its nonzero homology spans a range of degrees that grows with $n$
+of a single dimension for $0<k<n-2$ and $n$ large, and that its nonzero homology spans a range of degrees that grows with $n$
 \cite[Conjecture~2]{CT}. For $k=1$ and $m\ge7$, Theorem~\ref{thm:rank} with $h=2$ and $h=3$ gives nonzero integral
 homology of $\N(\Q_m,2m-3)=\Theta(\mathrm{Cube}(m,1))$ in the two degrees $3\cdot2^{m-2}-2$ and $7\cdot2^{m-3}-2$, which
 proves the first part of the conjecture for $k=1$ and $m\ge7$ (the case $m=5$ is their own computation). The degrees
@@ -305,7 +305,8 @@ $3\cdot2^k-2=6\cdot2^{k-1}-2$ and exceeds $2k+1$. The collapsibility bound follo
 
 \begin{remark}
 At $k=1$ the bounds of Theorem~\ref{thm:odd} are $5$ and $7$; for $n\ge4$ the value is $5$ by
-\cite[Theorem~5.9]{ASS}. For
+\cite[Theorem~5.9]{ASS}, and at $n=3$ the complex $\N(\Q_3,3)$ has reduced homology only in degree $4$, of rank $3$
+over $\F_p$ by the script cited below. For
 $2\le k\le4$ only $h=2$ is available and the lower bound is $3\cdot2^k-1$. At $k=3$ this is not sharp, by the bound
 $\C(\N(\Q_n,7))\ge25$ from \cite{CT} recalled in the introduction. The rank bound of Theorem~\ref{thm:rank} is not
 sharp: for $m=4$ and $m=5$ the rank in degree $q$ is $7$ and $10$ (over $\F_p$, $p=1000003$, by the script cited below;
@@ -332,7 +333,7 @@ These entities are included in the funding declaration above.
 \section*{Data availability}
 No data were generated or analysed in this work. Python scripts that check the syndrome-fibre construction of
 Section~4 for $6\le m\le9$ and compute the reduced Betti numbers of $\N(\Q_m,2m-3)$ for $m\le5$ are at
-\url{https://github.com/yspennstate/cech-hypercube-odd-scales/tree/v1.3}.
+\url{https://github.com/yspennstate/cech-hypercube-odd-scales/tree/v1.4}.
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proofs of
