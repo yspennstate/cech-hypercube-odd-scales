@@ -1,0 +1,4 @@
+m=3 N=8 Ind betti={1: 3} -> X betti via duality={4: 3} predicted_lower={4: 3}
+m=3 X direct betti={4: 3}
+m=4 N=16 Ind betti={3: 7} -> X betti via duality={10: 7} predicted_lower={10: 3}
+m=5 N=32 Ind betti={5: 1, 7: 10} -> X betti via duality={24: 1, 22: 10} predicted_lower={22: 3}

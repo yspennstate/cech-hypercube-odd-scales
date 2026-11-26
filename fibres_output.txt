@@ -1,0 +1,4 @@
+m=7 h=3 N=128 fibres ok=True matchings checked=56 sphere dim=110 set-map failures (bijection onto W_s from W_(s+t), proper image otherwise)=0
+m=8 h=3 N=256 fibres ok=True matchings checked=48 sphere dim=222 set-map failures (bijection onto W_s from W_(s+t), proper image otherwise)=0
+m=9 h=3 N=512 fibres ok=True matchings checked=48 sphere dim=446 set-map failures (bijection onto W_s from W_(s+t), proper image otherwise)=0
+m=6 h=2 N=64 fibres ok=True matchings checked=8 sphere dim=46 set-map failures (bijection onto W_s from W_(s+t), proper image otherwise)=0
