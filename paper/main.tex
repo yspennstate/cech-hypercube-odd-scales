@@ -95,14 +95,16 @@ Adams, Shukla and Singh observe \cite{ASS}. Conant and Thistlethwaite computed i
 $m=5$ they found homology in degrees $22$ and $24$ \cite[Theorem~5]{CT}. With Lemma~\ref{lem:retract} below, the class
 in degree $24$ gives $\Hred_{24}(\N(\Q_n,7))\ne0$ and $\C(\N(\Q_n,7))\ge25>3\cdot2^3-1$ for every $n\ge5$, so at $r=7$ the
 odd cases of both questions are already answered by their computation. Corollary~\ref{cor:questions} answers them at
-every odd $r\ge11$. The case $r=9$ is not settled by these arguments.
+every odd $r\ge11$. The cases $r=5$ and $r=9$ are not settled by these arguments.
 
 Two related results concern the same complexes. The inclusion $\N(\Q_n,r)\hookrightarrow\N(\Q_n,r+1)$ is
 null-homotopic for every $n\ge1$ and $r\ge0$ \cite{Sh1}, which answers Question~7.5 of \cite{ASS}; it is a statement about maps between scales and
 says nothing about the homology of a single complex. For each coordinate $p$-face $F$ of $\Q_n$, the reduced homology of
 $\N(\Q_p,2p-3)$ embeds as a split summand of that of $\N(\Q_n,2p-3)$, independently over the faces \cite{FC}; that
 result transports classes from $\Q_p$ to $\Q_n$ but proves nonvanishing on $\Q_p$ only for $p=3$. Theorem~\ref{thm:rank}
-supplies the nonvanishing for every $p\ge3$. Together with Lemma~\ref{lem:retract} these are homology propagation
+supplies the nonvanishing for every $p\ge3$, and with \cite{FC} it gives a free direct summand of rank at least
+$(2^h-1)\,2^{n-m}\binom{n}{m}$ in $\Hred_q(\N(\Q_n,2m-3);\Z)$. Lemma~\ref{lem:retract}, the result of \cite{FC} and
+Theorem~\ref{thm:rank} are homology propagation
 results for \v{C}ech complexes in the sense of Adams and Virk, who ask for such results in \cite[Question~8.8]{AV}.
 
 The upper bounds come from a criterion of Lew \cite{Lew} together with the skew Hamming set-pair bound of Gao and Zhao
@@ -123,7 +125,7 @@ faces are the subsets of the sets
 We call these sets the generating sets. We use only this description.
 
 \begin{lemma}\label{lem:retract}
-Let $m\le n$ and $r\ge0$. The coordinate inclusion $\iota\colon\F_2^m\to\F_2^n$, $x\mapsto(x,0)$, and the projection
+Let $1\le m\le n$ and $r\ge0$. The coordinate inclusion $\iota\colon\F_2^m\to\F_2^n$, $x\mapsto(x,0)$, and the projection
 $\pi\colon\F_2^n\to\F_2^m$ onto the first $m$ coordinates are simplicial maps $\N(\Q_m,r)\to\N(\Q_n,r)$ and
 $\N(\Q_n,r)\to\N(\Q_m,r)$, and $\pi\iota$ is the identity. Hence $\Hred_*(\N(\Q_m,r))$ is a direct summand of
 $\Hred_*(\N(\Q_n,r))$, with any coefficients.
@@ -154,8 +156,8 @@ $\C(X)\le d'(X)$.
 
 \subsection{The set-pair bound}
 \begin{theorem}[Gao--Zhao {\cite[Theorem~2.2]{GZ}}]\label{thm:GZ}
-Let $t\ge0$ and $n\ge t+1$, and let $a_1,b_1,\dots,a_M,b_M\in\F_2^n$ satisfy $d(a_i,b_i)\ge t+1$ for every $i$ and
-$d(a_i,b_j)\le t$ whenever $i<j$. Then $M\le2^{t+1}$.
+Let $\tau\ge0$ and $n\ge\tau+1$, and let $a_1,b_1,\dots,a_M,b_M\in\F_2^n$ satisfy $d(a_i,b_i)\ge\tau+1$ for every $i$ and
+$d(a_i,b_j)\le\tau$ whenever $i<j$. Then $M\le2^{\tau+1}$.
 \end{theorem}
 
 The theorem in \cite{GZ} is stated over any alphabet; we use the binary case.
@@ -295,7 +297,9 @@ $3\cdot2^k-2=6\cdot2^{k-1}-2$ and exceeds $2k+1$. The collapsibility bound follo
 At $k=1$ the bounds of Theorem~\ref{thm:odd} are $5$ and $7$; for $n\ge4$ the value is $5$ by
 \cite[Theorem~5.9]{ASS}. For
 $2\le k\le4$ only $h=2$ is available and the lower bound is $3\cdot2^k-1$. At $k=3$ this is not sharp, by the bound
-$\C(\N(\Q_n,7))\ge25$ from \cite{CT} recalled in the introduction. The exact odd-scale values remain open.
+$\C(\N(\Q_n,7))\ge25$ from \cite{CT} recalled in the introduction. The rank bound of Theorem~\ref{thm:rank} is not
+sharp: for $m=4$ and $m=5$ the rank in degree $q$ is $7$ and $10$ (over $\F_p$, $p=1000003$, by the script cited below;
+for $m=5$ also \cite[Theorem~5]{CT}), against $2^h-1=3$. The exact odd-scale values remain open.
 \end{remark}
 
 \section*{Acknowledgements and funding}
@@ -318,14 +322,15 @@ These entities are included in the funding declaration above.
 \section*{Data availability}
 No data were generated or analysed in this work. Python scripts that check the syndrome-fibre construction of
 Section~4 for $6\le m\le9$ and compute the reduced Betti numbers of $\N(\Q_m,2m-3)$ for $m\le5$ are at
-\url{https://github.com/yspennstate/cech-hypercube-odd-scales/tree/v1.0}.
+\url{https://github.com/yspennstate/cech-hypercube-odd-scales/tree/v1.2}.
 
 \section*{Declaration of generative AI and AI-assisted technologies}
 This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proofs of
 Theorems~\ref{thm:even}, \ref{thm:rank} and \ref{thm:odd}, including the syndrome-fibre construction, and Claude agents
 (Anthropic) checked the proofs and the references and wrote the manuscript. The
 questions are due to Adams, Shukla and Singh~\cite{ASS}. The upper bounds follow Selvaraja's use~\cite{Sel} of Lew's
-criterion~\cite{Lew} with the set-pair bound of Gao and Zhao~\cite{GZ}. The author directed the work and is responsible
+criterion~\cite{Lew} with the set-pair bound of Gao and Zhao~\cite{GZ}. The case $r=7$ rests on the computation of
+Conant and Thistlethwaite~\cite{CT}. The author directed the work and is responsible
 for the content of the paper and for decisions concerning its dissemination.
 
 \begin{thebibliography}{99}
@@ -337,13 +342,14 @@ graphs}, Bull. Malays. Math. Sci. Soc. \textbf{47} (2024), no.~3, Paper No.~72,
 \href{https://doi.org/10.1007/s40840-024-01663-x}{doi:10.1007/s40840-024-01663-x}; \arxiv{2309.06222}. Numbered results
 are cited as in the arXiv version.
 \bibitem{CT} J.~Conant and O.~Thistlethwaite, \emph{Boolean formulae, hypergraphs and combinatorial topology},
-Topology Appl. \textbf{157} (2010), no.~16, 2449--2461; \arxiv{0808.0739}.
+Topology Appl. \textbf{157} (2010), no.~16, 2449--2461,
+\href{https://doi.org/10.1016/j.topol.2010.08.016}{doi:10.1016/j.topol.2010.08.016}; \arxiv{0808.0739}.
 \bibitem{FC} Y.~Shmalo, \emph{Independent face classes in \v{C}ech complexes of hypercube graphs}, 2026,
 \href{https://doi.org/10.5281/zenodo.24556515}{doi:10.5281/zenodo.24556515}.
 \bibitem{GZ} G.~Gao and R.~Zhao, \emph{Tight bound for the skew Hamming set-pair problem}, preprint (2026),
 \arxiv{2607.17261}.
 \bibitem{Lew} A.~Lew, \emph{Collapsibility of simplicial complexes of hypergraphs}, Electron. J. Combin. \textbf{26}
-(2019), no.~4, Paper No.~4.10; \arxiv{1810.11802}.
+(2019), no.~4, Paper No.~4.10; \arxiv{1810.11802}. Numbered results are cited as in the journal version.
 \bibitem{Sh1} Y.~Shmalo, \emph{A one-step nullhomotopy for \v{C}ech complexes of hypercube graphs}, 2026,
 \href{https://doi.org/10.5281/zenodo.24548858}{doi:10.5281/zenodo.24548858}.
 \bibitem{Sel} S.~Selvaraja, \emph{Collapsibility of Vietoris--Rips complexes of hypercube graphs in codimension two},
