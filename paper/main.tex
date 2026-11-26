@@ -1,0 +1,362 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.15in]{geometry}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\arxiv}[1]{\href{https://arxiv.org/abs/#1}{arXiv:\nolinkurl{#1}}}
+\newcommand{\N}{\mathcal{N}}
+\newcommand{\Q}{Q}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Hred}{\widetilde{H}}
+\newcommand{\cl}[2]{N_{#1}[#2]}
+\newcommand{\C}{\operatorname{C}}
+\setlength{\emergencystretch}{2.5em}
+
+\begin{document}
+
+\title[Collapsibility and homology of \v{C}ech complexes of cubes]{Collapsibility numbers and high-degree homology of
+\v{C}ech complexes of hypercube graphs}
+\author{Yitzchak Shmalo}
+\date{26 November 2026}
+\address{Einstein Institute of Mathematics, The Hebrew University of Jerusalem, Jerusalem, Israel}
+\email{yspennstate@gmail.com}
+\subjclass[2020]{55U10, 05E45, 05C12, 55N31}
+\keywords{\v{C}ech complex, hypercube graph, collapsibility number, $d$-collapsible, set-pair system, independent
+dominating set}
+
+\begin{abstract}
+Let $\N(\Q_n,r)$ be the \v{C}ech complex of the hypercube graph $\Q_n$ at integer scale $r$. We show that its
+collapsibility number is $2^{k+1}-1$ at every even scale $r=2k$ and every $n\ge k+1$, the value proposed by Adams,
+Shukla and Singh. At odd scale $r=2m-3$ with $m\ge3$ we construct, for each $h$ with $2\le h\le\lfloor\log_2(m+1)\rfloor$,
+a free direct summand of rank at least $2^h-1$ in $\Hred_{q}(\N(\Q_n,r);\Z)$, $q=2^m-2^{m-h}-2$, for every $n\ge m$. The
+summand for $h=3$ lies in a degree outside the set proposed by Adams, Shukla and Singh for every odd $r\ge11$, and it
+forces the collapsibility number above the proposed odd-scale value $3\cdot2^k-1$. Together with an upper bound of
+$2^{k+2}-1$, the collapsibility number at scale $2k+1$ divided by $2^{k+2}$ tends to $1$, uniformly in $n\ge k+2$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+For a connected graph $G$ and a real $r\ge0$, the \v{C}ech complex $\N(G,r)$ is the nerve of the closed balls of radius
+$r/2$ about the vertices of $G$ in its geodesic realization. Adams, Shukla and Singh \cite{ASS} began the study of these
+complexes for the hypercube graph $\Q_n$ (written $\mathbb{I}_n$ there), the graph on $\F_2^n$ in which two words are
+adjacent when they differ in one coordinate. They determined the homotopy types at scales $r\le 2$, proved results at
+$r=3$, and recorded homology computed by machine in a table. Section~7 of \cite{ASS} lists open questions. Two of them
+concern us. Question~7.2 asks: for $r=2k$ even and $n\ge k+1$, is $\Hred_i(\N(\Q_n,r))\ne0$ if and only if
+$i\in\{r,\,2(2^k-1)\}$; and for $r=2k+1$ odd and $n\ge k+2$, is $\Hred_i(\N(\Q_n,r))\ne0$ if and only if
+$i\in\{r,\,3\cdot2^k-2\}$? Question~7.4 asks whether the collapsibility number of $\N(\Q_n,2k)$ is $2^{k+1}-1$ for
+$n\ge k+1$, and whether that of $\N(\Q_n,2k+1)$ is $3\cdot2^k-1$ for $n\ge k+2$. Adams, Shukla and Singh prove the first
+value at $k=1$ \cite[Lemma~7.3]{ASS} and the second at $k=1$ for $n\ge4$ \cite[Theorem~5.9]{ASS}.
+
+Throughout, $\Hred_*$ is reduced simplicial homology. Write $\C(X)$ for the collapsibility number of a simplicial
+complex $X$, the least $d$ such that $X$ is $d$-collapsible
+in the sense of Wegner \cite{W}.
+
+\begin{theorem}\label{thm:even}
+For every $k\ge0$ and $n\ge k+1$, $\C(\N(\Q_n,2k))=2^{k+1}-1$.
+\end{theorem}
+
+\begin{theorem}\label{thm:rank}
+Let $m\ge3$, $N=2^m$ and $2\le h\le\lfloor\log_2(m+1)\rfloor$. For every $n\ge m$, the group
+$\Hred_{q}(\N(\Q_n,2m-3);\Z)$ with $q=N-N/2^h-2$ contains a free direct summand of rank at least $2^h-1$.
+\end{theorem}
+
+\begin{theorem}\label{thm:odd}
+For every $k\ge1$ and $n\ge k+2$, with $m=k+2$, $N=2^m$ and $h=\lfloor\log_2(m+1)\rfloor$,
+\[
+N-\frac{N}{2^h}-1\;\le\;\C(\N(\Q_n,2k+1))\;\le\;N-1 .
+\]
+In particular $\C(\N(\Q_n,2k+1))/2^{k+2}\to1$ as $k\to\infty$, uniformly in $n\ge k+2$.
+\end{theorem}
+
+For $h=2$ the degree in Theorem~\ref{thm:rank} is $3\cdot2^k-2$ with $k=m-2$, the second degree in Question~7.2, and the
+lower bound of Theorem~\ref{thm:odd} with $h=2$ is the proposed value $3\cdot2^k-1$. For $m\ge7$ the choice $h=3$ is
+available, and the following is immediate.
+
+\begin{corollary}\label{cor:questions}
+Let $k\ge5$ and $n\ge k+2$. Then $\Hred_{7\cdot2^{k-1}-2}(\N(\Q_n,2k+1);\Z)\ne0$, a degree different from $2k+1$ and from
+$3\cdot2^k-2$; and $\C(\N(\Q_n,2k+1))\ge7\cdot2^{k-1}-1>3\cdot2^k-1$. So at every odd scale $r\ge11$ the answer to the
+``only if'' part of the odd case of Question~7.2 is negative, and so is the answer to the odd case of Question~7.4.
+\end{corollary}
+
+The complex $\N(\Q_m,2m-3)$ is the complex $\Theta(\mathrm{Cube}(m,1))$ of Conant and Thistlethwaite \cite{CT}, as
+Adams, Shukla and Singh observe \cite{ASS}. Conant and Thistlethwaite computed its rational homology for $m\le5$; at
+$m=5$ they found homology in degrees $22$ and $24$ \cite[Theorem~5]{CT}. With Lemma~\ref{lem:retract} below, the class
+in degree $24$ gives $\Hred_{24}(\N(\Q_n,7))\ne0$ and $\C(\N(\Q_n,7))\ge25>3\cdot2^3-1$ for every $n\ge5$, so at $r=7$ the
+odd cases of both questions are already answered by their computation. Corollary~\ref{cor:questions} answers them at
+every odd $r\ge11$. The case $r=9$ is not settled by these arguments.
+
+Two related results concern the same complexes. The inclusion $\N(\Q_n,r)\hookrightarrow\N(\Q_n,r+1)$ is
+null-homotopic for every $n\ge1$ and $r\ge0$ \cite{Sh1}, which answers Question~7.5 of \cite{ASS}; it is a statement about maps between scales and
+says nothing about the homology of a single complex. For each coordinate $p$-face $F$ of $\Q_n$, the reduced homology of
+$\N(\Q_p,2p-3)$ embeds as a split summand of that of $\N(\Q_n,2p-3)$, independently over the faces \cite{FC}; that
+result transports classes from $\Q_p$ to $\Q_n$ but proves nonvanishing on $\Q_p$ only for $p=3$. Theorem~\ref{thm:rank}
+supplies the nonvanishing for every $p\ge3$. Together with Lemma~\ref{lem:retract} these are homology propagation
+results for \v{C}ech complexes in the sense of Adams and Virk, who ask for such results in \cite[Question~8.8]{AV}.
+
+The upper bounds come from a criterion of Lew \cite{Lew} together with the skew Hamming set-pair bound of Gao and Zhao
+\cite{GZ}; Selvaraja \cite[Section~5]{Sel} uses the same two results for Vietoris--Rips complexes of hypercube graphs,
+and our argument for the upper bounds follows that model. The lower bounds come from spheres built on independent
+dominating sets of $\Q_m$ (the fibres of a syndrome map) and from retractions onto them.
+
+\section{Preliminaries}
+
+\subsection{The complexes}
+For a vertex $v$ of $\Q_n$ write $\cl{j}{v}$ for the set of words at Hamming distance at most $j$ from $v$, and
+$\bar v$ for the complement of $v$. By \cite[Lemma~2.2]{ASS}, $\N(\Q_n,r)$ is the simplicial complex on $\F_2^n$ whose
+faces are the subsets of the sets
+\[
+\cl{k}{v}\ (v\in\F_2^n)\quad\text{if } r=2k,\qquad
+\cl{k}{u}\cup\cl{k}{w}\ (uw\text{ an edge})\quad\text{if } r=2k+1 .
+\]
+We call these sets the generating sets. We use only this description.
+
+\begin{lemma}\label{lem:retract}
+Let $m\le n$ and $r\ge0$. The coordinate inclusion $\iota\colon\F_2^m\to\F_2^n$, $x\mapsto(x,0)$, and the projection
+$\pi\colon\F_2^n\to\F_2^m$ onto the first $m$ coordinates are simplicial maps $\N(\Q_m,r)\to\N(\Q_n,r)$ and
+$\N(\Q_n,r)\to\N(\Q_m,r)$, and $\pi\iota$ is the identity. Hence $\Hred_*(\N(\Q_m,r))$ is a direct summand of
+$\Hred_*(\N(\Q_n,r))$, with any coefficients.
+\end{lemma}
+
+For $r=3$ this is \cite[Lemma~5.7]{ASS}, and the proof is the same.
+
+\begin{proof}
+Both maps do not increase Hamming distance. Hence $\iota(\cl{j}{v})\subseteq\cl{j}{\iota v}$ and
+$\pi(\cl{j}{v})\subseteq\cl{j}{\pi v}$. At even scale this is all we need. At odd scale, $\iota$ carries an edge to an
+edge. For an edge $uw$ of $\Q_n$, either $\pi u\pi w$ is an edge of $\Q_m$, and then
+$\pi(\cl{k}{u}\cup\cl{k}{w})\subseteq\cl{k}{\pi u}\cup\cl{k}{\pi w}$, or $\pi u=\pi w$, and then the image lies in
+$\cl{k}{\pi u}$, which lies in $\cl{k}{\pi u}\cup\cl{k}{z}$ for any neighbour $z$ of $\pi u$. Finally $\pi\iota=\mathrm{id}$.
+\end{proof}
+
+\subsection{Collapsibility}
+A complex is $d$-collapsible if it can be reduced to the void complex by removing, one at a time, a face $\sigma$ of
+dimension at most $d-1$ that lies in a unique maximal face, together with all faces containing $\sigma$ \cite{W}. A
+$d$-collapsible complex $X$ has $\Hred_i(X)=0$ for $i\ge d$ \cite{W}; so
+\begin{equation}\label{eq:homlower}
+\Hred_q(X;\Z)\ne0\ \Longrightarrow\ \C(X)\ge q+1 .
+\end{equation}
+
+For the upper bounds we use Lew's criterion \cite[Theorem~4]{Lew}. For a complex $X$, let $d'(X)$ be the largest $t$
+for which there are maximal faces $\sigma_1,\dots,\sigma_{t+1}$ of $X$ and vertices $v_1,\dots,v_t$ with
+$v_i\notin\sigma_i$ for $i\le t$ and $v_i\in\sigma_j$ for $i<j\le t+1$. Then $X$ is $d'(X)$-collapsible, so
+$\C(X)\le d'(X)$.
+
+\subsection{The set-pair bound}
+\begin{theorem}[Gao--Zhao {\cite[Theorem~2.2]{GZ}}]\label{thm:GZ}
+Let $t\ge0$ and $n\ge t+1$, and let $a_1,b_1,\dots,a_M,b_M\in\F_2^n$ satisfy $d(a_i,b_i)\ge t+1$ for every $i$ and
+$d(a_i,b_j)\le t$ whenever $i<j$. Then $M\le2^{t+1}$.
+\end{theorem}
+
+The theorem in \cite{GZ} is stated over any alphabet; we use the binary case.
+
+\section{Even scales}
+
+\begin{proof}[Proof of Theorem~\ref{thm:even}]
+\emph{Lower bound.} In $\Q_{k+1}$ the set $\cl{k}{v}$ is the whole vertex set except $\bar v$. So the faces of
+$\N(\Q_{k+1},2k)$ are the proper subsets of $\F_2^{k+1}$, and the complex is the boundary of a simplex on $2^{k+1}$
+vertices, a sphere of dimension $2^{k+1}-2$; this is noted in \cite{ASS} in the discussion of their Table~1. By Lemma~\ref{lem:retract}, $\Hred_{2^{k+1}-2}(\N(\Q_n,2k);\Z)\ne0$ for
+every $n\ge k+1$, and \eqref{eq:homlower} gives $\C\ge2^{k+1}-1$.
+
+\emph{Upper bound.} Let $X=\N(\Q_n,2k)$ with $n\ge k+1$. Every maximal face of $X$ is a generating set $\cl{k}{c}$, and
+$\cl{k}{c}$ misses $\bar c$, so $X$ is not a simplex. Take $\sigma_1,\dots,\sigma_{t+1}$ and $v_1,\dots,v_t$ as in the
+definition of $d'(X)$, with $\sigma_j=\cl{k}{c_j}$, and choose $v_{t+1}\notin\sigma_{t+1}$. Then $d(v_i,c_i)\ge k+1$
+for $i\le t+1$ and $d(v_i,c_j)\le k$ for $i<j\le t+1$. Theorem~\ref{thm:GZ} with threshold $k$ gives $t+1\le2^{k+1}$.
+Hence $\C(X)\le d'(X)\le2^{k+1}-1$.
+\end{proof}
+
+For $k=1$ this is \cite[Lemma~7.3]{ASS}, and for $k=0$ the complex is a discrete set of at least two points.
+
+\section{Spheres in $\N(\Q_m,2m-3)$}
+
+Throughout this section $m\ge3$, $N=2^m$, $V=\F_2^m$ and $X_m=\N(\Q_m,2m-3)$.
+
+\begin{lemma}\label{lem:faces}
+A set $\sigma\subseteq V$ is a face of $X_m$ if and only if $V\setminus\sigma$ contains an edge of $\Q_m$.
+\end{lemma}
+
+\begin{proof}
+The scale is $2k+1$ with $k=m-2$. Let $uw$ be an edge. A vertex $z$ lies outside $\cl{m-2}{u}\cup\cl{m-2}{w}$ exactly
+when $d(z,u)\ge m-1$ and $d(z,w)\ge m-1$. These two distances differ by one, so they are $m-1$ and $m$ in some order,
+and $z\in\{\bar u,\bar w\}$. So the generating sets are the complements of the edges $\bar u\bar w$, and every edge
+arises this way.
+\end{proof}
+
+\begin{lemma}\label{lem:sphere}
+Let $S\subseteq V$ be independent and dominating in $\Q_m$, and let $W=V\setminus S$. The full subcomplex of $X_m$ on
+$W$ is the boundary $\Sigma_W$ of the simplex on $W$, a sphere of dimension $|W|-2$.
+\end{lemma}
+
+\begin{proof}
+The complement of $W$ is $S$, which contains no edge, so $W$ is not a face. For $w\in W$ some $s\in S$ is adjacent to
+$w$, so the complement of $W\setminus\{w\}$ contains the edge $sw$, and $W\setminus\{w\}$ is a face.
+\end{proof}
+
+\begin{lemma}\label{lem:retraction}
+Let $S$ and $W$ be as in Lemma~\ref{lem:sphere}. Suppose $S'\subseteq W$ and $\varphi\colon S\to S'$ is a bijection with
+$s\varphi(s)$ an edge for every $s$, such that the subgraph of $\Q_m$ induced on $S\cup S'$ is the perfect matching
+$\{s\varphi(s)\}$. Then $f\colon V\to W$, $f(s)=\varphi(s)$ for $s\in S$ and $f(w)=w$ for $w\in W$, is a simplicial
+map $X_m\to\Sigma_W$, and it restricts to the identity on $\Sigma_W$.
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:sphere} it is enough to show that $f(\sigma)\ne W$ for every face $\sigma$. Suppose $f(\sigma)=W$.
+A vertex of $W\setminus S'$ has only itself as a preimage, so $W\setminus S'\subseteq\sigma$, and for each $s\in S$ the
+face $\sigma$ contains $s$ or $\varphi(s)$. Thus $V\setminus\sigma\subseteq S\cup S'$ and it contains at most one
+endpoint of each matching edge. Since the induced subgraph on $S\cup S'$ is that matching, $V\setminus\sigma$ is
+independent, and by Lemma~\ref{lem:faces} $\sigma$ is not a face.
+\end{proof}
+
+\subsection*{Syndrome fibres}
+Fix $h$ with $2\le h\le\lfloor\log_2(m+1)\rfloor$, so $2^h-1\le m$. Let $H$ be the $h\times m$ matrix over $\F_2$ whose
+first $2^h-1$ columns are the nonzero vectors of $\F_2^h$, each once, and whose remaining $m-2^h+1$ columns all equal
+one fixed nonzero vector $c_0$. Write $H_j$ for the $j$th column. Call a column \emph{simple} if no other column equals
+it. The simple columns are all nonzero vectors other than $c_0$ when $m>2^h-1$, and all of them when $m=2^h-1$; as
+$h\ge2$, they span $\F_2^h$. For $s\in\F_2^h$ put $S_s=\{x\in V:Hx=s\}$ and $W_s=V\setminus S_s$. Since $H$ has rank
+$h$, $|S_s|=N/2^h$ for every $s$.
+
+\begin{lemma}\label{lem:fibres}
+\begin{enumerate}
+\item[(a)] Each $S_s$ is independent and dominating, so $\Sigma_s:=\Sigma_{W_s}$ is a sphere in $X_m$ of dimension
+$q=N-N/2^h-2$.
+\item[(b)] If $H_j$ is simple and $t=H_j$, the subgraph induced on $S_s\cup S_{s+t}$ is the perfect matching
+$x\leftrightarrow x+e_j$, $x\in S_s$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) Flipping coordinate $i$ changes $Hx$ by $H_i\ne0$, so no two words of $S_s$ are adjacent. If $Hx\ne s$, then
+$s-Hx=H_i$ for some $i$, and $x+e_i\in S_s$. (b) Words in one fibre are not adjacent. If $x\in S_s$ and $x+e_i\in
+S_{s+t}$, then $H_i=t$, so $i=j$ because $H_j$ is simple.
+\end{proof}
+
+Write $z_s\in\Hred_q(X_m;\Z)$ for the image of a fundamental class of $\Sigma_s$. If $H_j$ is simple and $t=H_j$,
+Lemmas~\ref{lem:retraction} and \ref{lem:fibres}(b), with $S=S_s$, $S'=S_{s+t}$ and $\varphi(x)=x+e_j$, give a simplicial
+retraction $f_{s,j}\colon X_m\to\Sigma_s$.
+
+\begin{lemma}\label{lem:matrix}
+Let $H_j$ be simple, $t=H_j$, and $u\in\F_2^h$. Identify $\Hred_q(\Sigma_s;\Z)$ with $\Z$ by the fundamental class. Then $(f_{s,j})_*$ carries the class of
+$\Sigma_u$ to $1$ if $u=s$, to $\pm1$ if $u=s+t$, and to $0$ otherwise.
+\end{lemma}
+
+\begin{proof}
+On $\Sigma_s$ the map is the identity. On $W_{s+t}$ it is a bijection onto $W_s$: it exchanges $S_s\subseteq W_{s+t}$
+with $S_{s+t}\subseteq W_s$ and fixes the rest. So it carries $\Sigma_{s+t}$ isomorphically onto $\Sigma_s$, of degree
+$\pm1$. For $u\notin\{s,s+t\}$ we have $S_s\cup S_{s+t}\subseteq W_u$, and $f_{s,j}(W_u)=W_u\setminus S_s$, a proper
+subset of $W_s$ since it misses $S_u\ne\emptyset$. So $f_{s,j}$ maps $\Sigma_u$ into a simplex of $\Sigma_s$, and
+$(f_{s,j})_*z_u=0$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:rank}]
+The Cayley graph of $\F_2^h$ with respect to the simple columns is connected, so it has a spanning tree rooted at $0$.
+For $s\ne0$ let $p(s)=s+t_s$ be the parent of $s$, with $t_s=H_{j(s)}$ simple, and let $f_s=f_{s,j(s)}$. List the
+$2^h-1$ nonzero $s$ in order of nondecreasing depth in the tree. Let $\Psi\colon\Z^{2^h-1}\to\Hred_q(X_m)$ send the basis vector
+$e_u$ to $z_u$, and let $\Phi\colon\Hred_q(X_m)\to\Z^{2^h-1}$ have components $(f_s)_*$, after identifying
+$\Hred_q(\Sigma_s)$ with $\Z$. By Lemma~\ref{lem:matrix}, the matrix of $\Phi\Psi$ has entry $1$ at $(s,s)$, entry $\pm1$
+at $(s,p(s))$ when $p(s)\ne0$, and zeros elsewhere. Parents come earlier in the order, so this matrix is unitriangular
+and invertible over $\Z$. Hence $\Psi$ is a split injection, and $\Hred_q(X_m;\Z)$ has a free summand of rank $2^h-1$.
+Lemma~\ref{lem:retract} carries it to $\N(\Q_n,2m-3)$ for every $n\ge m$.
+\end{proof}
+
+\section{Odd scales}
+
+\begin{proof}[Proof of Theorem~\ref{thm:odd}]
+\emph{Lower bound.} Here $2k+1=2m-3$, and $n\ge k+2=m$. Theorem~\ref{thm:rank} with $h=\lfloor\log_2(m+1)\rfloor$ gives
+$\Hred_{N-N/2^h-2}(\N(\Q_n,2k+1);\Z)\ne0$, and \eqref{eq:homlower} gives the lower bound.
+
+\emph{Upper bound.} Let $X=\N(\Q_n,2k+1)$ with $n\ge k+2$. A generating set $\cl{k}{u}\cup\cl{k}{w}$ misses $\bar u$,
+which is at distance $n\ge k+2$ from $u$ and $n-1\ge k+1$ from $w$; so $X$ is not a simplex. Take
+$\sigma_j=\cl{k}{u_j}\cup\cl{k}{w_j}$ ($j\le t+1$) and $v_1,\dots,v_t$ as in the definition of $d'(X)$, and choose
+$v_{t+1}\notin\sigma_{t+1}$. Since $v_j\notin\sigma_j$, both $d(v_j,u_j)$ and $d(v_j,w_j)$ are at least $k+1$; they
+differ by one, so one of them is at least $k+2$. Call that endpoint $c_j$. For $i<j$, $v_i\in\sigma_j$ lies within $k$
+of $u_j$ or of $w_j$, hence within $k+1$ of both, and $d(v_i,c_j)\le k+1$. Theorem~\ref{thm:GZ} with threshold $k+1$
+(note $n\ge k+2$) gives $t+1\le2^{k+2}$, so $\C(X)\le2^{k+2}-1=N-1$.
+
+\emph{Limit.} $h=\lfloor\log_2(m+1)\rfloor$ satisfies $2^{h}>(m+1)/2$, so the two bounds differ by at most
+$N\cdot 2/(m+1)$, and the ratio to $N=2^{k+2}$ tends to $1$.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:questions}]
+For $k\ge5$, $m=k+2\ge7$ and $h=3$ is allowed. The degree is $2^{k+2}-2^{k-1}-2=7\cdot2^{k-1}-2$, which differs from
+$3\cdot2^k-2=6\cdot2^{k-1}-2$ and exceeds $2k+1$. The collapsibility bound follows from \eqref{eq:homlower}.
+\end{proof}
+
+\begin{remark}
+At $k=1$ the bounds of Theorem~\ref{thm:odd} are $5$ and $7$; for $n\ge4$ the value is $5$ by
+\cite[Theorem~5.9]{ASS}. For
+$2\le k\le4$ only $h=2$ is available and the lower bound is $3\cdot2^k-1$. At $k=3$ this is not sharp, by the bound
+$\C(\N(\Q_n,7))\ge25$ from \cite{CT} recalled in the introduction. The exact odd-scale values remain open.
+\end{remark}
+
+\section*{Acknowledgements and funding}
+This work was done by AI agents, Claude (Anthropic) and Codex (OpenAI), connected to Math Brain~\cite{MathBrainRepo}
+and working together inside the Brain framework~\cite{BrainFramework}, a shared, persistent memory in which the agents
+record claims, proofs, failed attempts and methods, retrieve one another's results, coordinate who works on what, and
+audit each other's work. For more on the Brain and Math Brain, see the Math Brain paper~\cite{MathBrainPaper}, the Math
+Brain repository~\cite{MathBrainRepo} and the Brain framework repository~\cite{BrainFramework}.
+
+The research presented in this paper was supported by the European Research Council (ERC) under the European Union's
+Horizon Europe research and innovation programme (grant agreement No.~101041711), by the Simons Foundation as part of
+the Collaboration on the Mathematical and Scientific Foundations of Deep Learning, by Heights Labs, by Convex Nexus
+Capital, by the Israel Science Foundation (grant number 2258/19), and by the Israel Science Foundation (ISF Grant
+4101/25).
+
+\section*{Declaration of competing interest}
+The author holds equity in Heights Labs and in Convex Nexus Capital and has a management role at Convex Nexus Capital.
+These entities are included in the funding declaration above.
+
+\section*{Data availability}
+No data were generated or analysed in this work. Python scripts that check the syndrome-fibre construction of
+Section~4 for $6\le m\le9$ and compute the reduced Betti numbers of $\N(\Q_m,2m-3)$ for $m\le5$ are at
+\url{https://github.com/yspennstate/cech-hypercube-odd-scales/tree/v1.0}.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+This paper is part of a research project on AI proving problems. Codex agents (OpenAI) produced the proofs of
+Theorems~\ref{thm:even}, \ref{thm:rank} and \ref{thm:odd}, including the syndrome-fibre construction, and Claude agents
+(Anthropic) checked the proofs and the references and wrote the manuscript. The
+questions are due to Adams, Shukla and Singh~\cite{ASS}. The upper bounds follow Selvaraja's use~\cite{Sel} of Lew's
+criterion~\cite{Lew} with the set-pair bound of Gao and Zhao~\cite{GZ}. The author directed the work and is responsible
+for the content of the paper and for decisions concerning its dissemination.
+
+\begin{thebibliography}{99}
+\bibitem{ASS} H.~Adams, S.~Shukla and A.~Singh, \emph{\v{C}ech complexes of hypercube graphs}, Homology Homotopy Appl.
+\textbf{27} (2025), no.~1, 83--105, \href{https://doi.org/10.4310/HHA.2025.v27.n1.a6}{doi:10.4310/HHA.2025.v27.n1.a6};
+\arxiv{2212.05871}. Numbered results are cited as in the arXiv version.
+\bibitem{AV} H.~Adams and \v{Z}.~Virk, \emph{Lower bounds on the homology of Vietoris--Rips complexes of hypercube
+graphs}, Bull. Malays. Math. Sci. Soc. \textbf{47} (2024), no.~3, Paper No.~72,
+\href{https://doi.org/10.1007/s40840-024-01663-x}{doi:10.1007/s40840-024-01663-x}; \arxiv{2309.06222}. Numbered results
+are cited as in the arXiv version.
+\bibitem{CT} J.~Conant and O.~Thistlethwaite, \emph{Boolean formulae, hypergraphs and combinatorial topology},
+Topology Appl. \textbf{157} (2010), no.~16, 2449--2461; \arxiv{0808.0739}.
+\bibitem{FC} Y.~Shmalo, \emph{Independent face classes in \v{C}ech complexes of hypercube graphs}, 2026,
+\href{https://doi.org/10.5281/zenodo.24556515}{doi:10.5281/zenodo.24556515}.
+\bibitem{GZ} G.~Gao and R.~Zhao, \emph{Tight bound for the skew Hamming set-pair problem}, preprint (2026),
+\arxiv{2607.17261}.
+\bibitem{Lew} A.~Lew, \emph{Collapsibility of simplicial complexes of hypergraphs}, Electron. J. Combin. \textbf{26}
+(2019), no.~4, Paper No.~4.10; \arxiv{1810.11802}.
+\bibitem{Sh1} Y.~Shmalo, \emph{A one-step nullhomotopy for \v{C}ech complexes of hypercube graphs}, 2026,
+\href{https://doi.org/10.5281/zenodo.24548858}{doi:10.5281/zenodo.24548858}.
+\bibitem{Sel} S.~Selvaraja, \emph{Collapsibility of Vietoris--Rips complexes of hypercube graphs in codimension two},
+preprint (2026), \arxiv{2611.20820}.
+\bibitem{W} G.~Wegner, \emph{$d$-collapsing and nerves of families of convex sets}, Arch. Math. (Basel) \textbf{26}
+(1975), 317--321.
+\bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain: public snapshot, code and tests}, 2026,
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a}.
+\bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical
+research}, 2026, \href{https://doi.org/10.5281/zenodo.24150837}{doi:10.5281/zenodo.24150837},
+\url{https://github.com/yspennstate/math-brain-public/tree/5427734deee9be643d6dfbdd5e7d4baeeefe4a4a/papers/math-brain-2026-10-24}.
+\bibitem{BrainFramework} Y.~Shmalo, \emph{Brain Framework}, public software repository, 2026,
+\url{https://github.com/yspennstate/brain-framework-public/tree/46b935d26d5a2893f7790b60466387dd8da47ef5}.
+\end{thebibliography}
+
+\end{document}
